@@ -6,6 +6,7 @@ import { convertDurationToTimeString } from "../utils/convertDurationToTimeStrin
 import styles from '../styles/home.module.scss';
 import Image from 'next/image'
 import Link from 'next/link';
+import playGreen from '../../public/play-green.svg';
 
 type Episodes = {
   id: string;
@@ -34,7 +35,6 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
             return (
               <li key={episode.id}>
                 <Image width={192} height={192} src={episode.thumbnail} alt={episode.title} objectFit="cover" />
-
                 <div className={styles.episodeDetails}>
                   <Link href={`/episodes/${episode.id}`}>
                     <a>{episode.title}</a>
@@ -45,7 +45,7 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
                 </div>
 
                 <button type="button">
-                  <img src="/play-green.svg" alt="Tocar episodio" />
+                  <Image src={playGreen} alt="Tocar episodio" />
                 </button>
               </li>
             );
@@ -84,7 +84,7 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
                   <td>{episode.durationAsString}</td>
                   <td>
                     <button type="button">
-                      <img src="/play-green.svg" alt="Tocar episodio" />
+                      <Image src={playGreen} alt="Tocar episodio" />
                     </button>
                   </td>
                 </tr>

@@ -6,6 +6,8 @@ import ptBR from 'date-fns/locale/pt-BR';
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
 import styles from '../../styles/episode.module.scss';
 import Image from 'next/image';
+import arrowLeft from '../../../public/arrow-left.svg';
+import play from '../../../public/play.svg';
 
 
 type Episode = {
@@ -17,7 +19,7 @@ type Episode = {
     durationAsString: string;
     url: string;
     published_at: string;
-    description: string
+    description: string;
 }
 
 
@@ -26,18 +28,18 @@ type EpisodeProps = {
 }
 
 
-export function Episode({ episode }: EpisodeProps) {
+export  default function Episode({ episode }: EpisodeProps) {
     return (
        <div className={styles.episode}>
            <div className={styles.thumbnailContainer}>
-                <Link href="/">
+                <Link href="/" passHref>
                     <button type="button">
-                        <img src="/arrow-left.svg" alt="Voltar" />
+                        <Image src={arrowLeft} alt="Voltar" />
                     </button>
                 </Link>
-                <Image width={700} height={160} src={episode.thumbnail} objectFit="cover"/>
+                <Image width={700} height={160} src={episode.thumbnail} objectFit="cover" alt={episode.title}/>
                 <button type="button">
-                    <img src="/play.svg" alt="Tocar episodio" />
+                    <Image src={play} alt="Tocar episodio" />
                 </button>
            </div>
 
