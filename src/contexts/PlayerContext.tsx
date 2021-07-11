@@ -1,5 +1,4 @@
-import { createContext, ReactNode, useContext } from "react";
-import { useState } from 'react';
+import { createContext, ReactNode, useContext, useState } from "react";
 
 type Episode = {
     title: string;
@@ -75,7 +74,7 @@ export function PlayerContextProvider({children}: PlayerContextProviderProps){
     }
 
     const hasPrevious = currentEpisodeIndex > 0;
-    const hasNext = isShuffling || currentEpisodeIndex +1 < episodeList.length
+    const hasNext = isShuffling || (currentEpisodeIndex +1) < episodeList.length
 
     function playNext(){
         if(isShuffling){
