@@ -95,16 +95,16 @@ export function Player() {
                 )}
 
                 <div className={styles.buttons}>
-                    <button type="button" disabled={!episode || episodeList.length == 1} onClick={toggleShuffle} className={isShuffling ? styles.isActive : ''}>
+                    <button type="button" disabled={!episode || episodeList.length === 1} onClick={toggleShuffle} className={isShuffling ? styles.isActive : ''}>
                         <Image src={shuffle} alt="Embaralhar" />
                     </button>
-                    <button type="button" onClick={playPrevious} disabled={!episode || hasPrevious}>
+                    <button type="button" onClick={playPrevious} disabled={!episode || !hasPrevious}>
                         <Image src={playPreviousImg} alt="Tocar anterior" />
                     </button>
                     <button type="button" className={styles.playButton} disabled={!episode} onClick={togglePlay}>
                         {isPlaying ? <Image src={pause} alt="Tocar" /> : <Image src={playImg} alt="Tocar" />}
                     </button>
-                    <button type="button" onClick={playNext} disabled={!episode || hasNext}>
+                    <button type="button" onClick={playNext} disabled={!episode || !hasNext}>
                         <Image src={playNextImg} alt="Tocar proxima" />
                     </button>
                     <button type="button" disabled={!episode} onClick={toggleLooping} className={isLooping ? styles.isActive : ''}>
