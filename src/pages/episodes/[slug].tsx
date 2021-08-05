@@ -8,7 +8,7 @@ import styles from '../../styles/episode.module.scss';
 import Image from 'next/image';
 import arrowLeft from '../../../public/arrow-left.svg';
 import playImg from '../../../public/play.svg';
-import { usePlayer } from "../../contexts/PlayerContext";
+import { usePlayer } from "../../hooks/PlayerContext";
 import Head from 'next/head'
 
 

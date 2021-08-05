@@ -8,7 +8,7 @@ import playNextImg from '../../../public/play-next.svg';
 import repeat from '../../../public/repeat.svg';
 import pause from '../../../public/pause.svg';
 import { useEffect, useRef, useState } from 'react';
-import { usePlayer } from '../../contexts/PlayerContext';
+import { usePlayer } from '../../hooks/PlayerContext';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
