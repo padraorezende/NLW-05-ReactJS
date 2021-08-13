@@ -8,7 +8,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link';
 import playGreen from '../../public/play-green.svg';
-import { usePlayer } from "../contexts/PlayerContext";
+import { usePlayer } from "../hooks/PlayerContext";
 
 type Episodes = {
   id: string;
