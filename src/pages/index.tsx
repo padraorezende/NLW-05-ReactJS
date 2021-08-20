@@ -29,7 +29,7 @@ type HomeProps = {
 export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
   const { playList } = usePlayer();
 
-  const  episodeList = [...latestEpisodes,...allEpisodes];
+  const episodeList = [...latestEpisodes, ...allEpisodes];
 
   return (
     <div className={styles.homepage}>
@@ -54,11 +54,11 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
                   <span>{episode.durationAsString}</span>
                 </div>
 
-                <button type="button" onClick={()=> playList(episodeList, index)}>
+                <button type="button" onClick={() => playList(episodeList, index)}>
                   <Image src={playGreen} alt="Tocar episodio" />
                 </button>
               </li>
-            );
+            )
           })}
         </ul>
       </section>
@@ -90,10 +90,10 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
                     </Link>
                   </td>
                   <td>{episode.members}</td>
-                  <td style={{ width: 180 }}>{episode.published_at}</td>
+                  <td style={{ width: 100 }}>{episode.published_at}</td>
                   <td>{episode.durationAsString}</td>
                   <td>
-                    <button type="button" onClick={()=> playList(episodeList, index+ latestEpisodes.length)}>
+                    <button type="button" onClick={() => playList(episodeList, index + latestEpisodes.length)}>
                       <Image src={playGreen} alt="Tocar episodio" />
                     </button>
                   </td>

@@ -7,7 +7,7 @@ import { PlayerContextProvider } from '../hooks/PlayerContext';
 function MyApp({ Component, pageProps }) {
   return (
     <PlayerContextProvider>
-      <div className={styles.wraper}>
+      <div className={styles.wrapper}>
         <main>
           <Header />
           <Component {...pageProps} />
